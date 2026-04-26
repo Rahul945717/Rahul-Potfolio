@@ -10,14 +10,23 @@ body {
   color: #fff;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
+  background: #000;
+  z-index: 1000;
 }
 
+/* Logo */
+.logo {
+  width: 120px;
+}
+
+/* Nav Links */
 nav ul {
   display: flex;
   gap: 40px;
@@ -28,14 +37,82 @@ nav a {
   text-decoration: none;
   color: #ccc;
   transition: 0.3s;
+  font-size: 16px;
 }
 
 nav a:hover {
   color: #fff;
 }
 
+/* ===== HAMBURGER ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap; /* 🔥 allows menu to go below */
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: flex;
+    margin-left: auto; /* 🔥 keep it right */
+  }
+
+  /* NAV TAKES FULL WIDTH BELOW */
+  #nav-menu {
+    width: 100%;
+  }
+
+  /* Hide menu */
+  nav ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    background: #000;
+  }
+
+  /* Show menu */
+  #nav-menu.active ul {
+    display: flex;
+  }
+
+}
+
+/* ===== HAMBURGER ANIMATION ===== */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Hero */
 .hero {
+  position: relative;
+  z-index: 1;
   display: flex;
   background: radial-gradient(55.66% 45.66% at 10.67% 48.44%, #1b093d 0%, #000000 62.02%);
   align-items: center;
@@ -131,8 +208,6 @@ nav a:hover {
 }
 
 .about {
-/* float: left; */
-/* margin: 0% 50%; */
 color: #00BAC4;
 font-family: Poppins;
 font-size: 60px;
