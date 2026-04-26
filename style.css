@@ -34,79 +34,6 @@ nav a:hover {
   color: #fff;
 }
 
-/* Hamburger hidden by default */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  transition: 0.3s;
-}
-
-/* 📱 Mobile */
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 15px 20px;
-  }
-
-  /* Show hamburger */
-  .menu-toggle {
-    display: flex;
-  }
-
-  /* Hide menu initially */
-  #nav-menu {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #000;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.3s ease;
-  }
-
-  /* When active */
-  #nav-menu.active {
-    max-height: 300px;
-  }
-
-  /* Stack items */
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-  }
-
-  nav a {
-    font-size: 18px;
-  }
-}
-
-/* Hamburger animation */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-
-
 /* Hero */
 .hero {
   display: flex;
@@ -204,8 +131,8 @@ nav a:hover {
 }
 
 .about {
-float: left;
-margin: 0% 50%;
+/* float: left; */
+/* margin: 0% 50%; */
 color: #00BAC4;
 font-family: Poppins;
 font-size: 60px;
@@ -873,26 +800,23 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/* ================= HERO RESPONSIVE ================= */
-
+/* ===== HERO MOBILE FIX ===== */
 @media (max-width: 768px) {
 
   .hero {
-    flex-direction: column-reverse; /* 👈 IMAGE ON TOP */
+    flex-direction: column-reverse; /* image on top */
     text-align: center;
 
-    padding: 40px 20px;
-    min-height: auto; /* remove big gap */
+    padding: 40px 20px;   /* reduce spacing */
+    min-height: auto;     /* 🔥 remove extra height */
   }
 
-  /* Text */
   .hero-text h1 {
     font-size: 40px;
   }
 
   .hero-text h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .hero-text p {
@@ -903,9 +827,8 @@ html {
     margin-top: 20px;
   }
 
-  /* Image */
   .hero-image {
-    margin-bottom: 30px; /* space between image & text */
+    margin-bottom: 25px;
   }
 
   .blob {
