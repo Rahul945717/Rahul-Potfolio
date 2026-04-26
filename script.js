@@ -60,11 +60,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-
 const toggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
+// Toggle menu
 toggle.addEventListener("click", () => {
   toggle.classList.toggle("active");
   navMenu.classList.toggle("active");
+});
+
+// Close menu when clicking links
+document.querySelectorAll("#nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    toggle.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
 });
