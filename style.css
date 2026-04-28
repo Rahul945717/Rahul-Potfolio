@@ -61,6 +61,9 @@ nav a:hover {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
+   .logo{
+    width: 80px;
+  }
 
   .navbar {
     padding: 15px 20px;
