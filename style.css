@@ -24,6 +24,11 @@ body {
 /* Logo */
 .logo {
   width: 120px;
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
 }
 
 /* Nav Links */
@@ -884,9 +889,9 @@ html {
   .hero {
     flex-direction: column-reverse; /* image on top */
     text-align: center;
-
+    background: radial-gradient(50.66% 28.66% at 50.67% 65.44%, #1b093d 0%, #000000 62.02%);
     padding: 40px 20px;   /* reduce spacing */
-    min-height: auto;     /* 🔥 remove extra height */
+    min-height: auto;     /*  remove extra height */
   }
 
   .hero-text h1 {
